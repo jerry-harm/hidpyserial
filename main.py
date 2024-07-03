@@ -18,7 +18,7 @@ spkeytable={'!':[0x1e,2],'@':[0x1f,2],'#':[0x20,2],'$':[0x21,2],
             'F5':[0x3e,0],'F6':[0x3f,0],'F7':[0x40,0],'F8':[0x41,0],'F9':[0x42,0],
             'F10':[0x43,0],'F11':[0x44,0],'F12':[0x45,0],
             'up':[0x52,0],'down':[0x51,0],'left':[0x50,0],'right':[0x4f,0],
-            'esc':[0x29,0],'power':[0x66,0]
+            'esc':[0x29,0]
             }
 
 
@@ -40,6 +40,7 @@ def convert(letter):
 
 def signal_handler(signal, frame):
     print('Caught Ctrl+C / SIGINT signal')
+    ser.close()
     sys.exit(0)
 
 
@@ -87,5 +88,5 @@ while 1:
             # 接收数据
 
 
-ser.close()
+
 
